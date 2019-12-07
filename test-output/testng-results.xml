@@ -2,35 +2,35 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27521" started-at="2019-12-07T23:18:10Z" finished-at="2019-12-07T23:18:37Z">
+  <suite name="Default suite" duration-ms="23855" started-at="2019-12-07T23:49:53Z" finished-at="2019-12-07T23:50:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27521" started-at="2019-12-07T23:18:10Z" finished-at="2019-12-07T23:18:37Z">
+    <test name="Default test" duration-ms="23855" started-at="2019-12-07T23:49:53Z" finished-at="2019-12-07T23:50:17Z">
       <class name="org.techAltum.com.NaukriTest">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:org.techAltum.com.NaukriTest@5f2108b5]" name="beforeClass" is-config="true" duration-ms="157" started-at="2019-12-07T23:18:10Z" finished-at="2019-12-07T23:18:10Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:org.techAltum.com.NaukriTest@490ab905]" name="beforeClass" is-config="true" duration-ms="155" started-at="2019-12-07T23:49:53Z" finished-at="2019-12-07T23:49:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:org.techAltum.com.NaukriTest@5f2108b5]" name="openBrowser" is-config="true" duration-ms="10618" started-at="2019-12-07T23:18:10Z" finished-at="2019-12-07T23:18:20Z">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:org.techAltum.com.NaukriTest@490ab905]" name="openBrowser" is-config="true" duration-ms="10038" started-at="2019-12-07T23:49:53Z" finished-at="2019-12-07T23:50:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="naukriTest()[pri:0, instance:org.techAltum.com.NaukriTest@5f2108b5]" name="naukriTest" duration-ms="15745" started-at="2019-12-07T23:18:20Z" finished-at="2019-12-07T23:18:36Z">
+        <test-method status="PASS" signature="naukriTest()[pri:0, instance:org.techAltum.com.NaukriTest@490ab905]" name="naukriTest" duration-ms="12709" started-at="2019-12-07T23:50:03Z" finished-at="2019-12-07T23:50:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- naukriTest -->
-        <test-method status="PASS" signature="quitBrowser(org.testng.ITestResult)[pri:0, instance:org.techAltum.com.NaukriTest@5f2108b5]" name="quitBrowser" is-config="true" duration-ms="749" started-at="2019-12-07T23:18:36Z" finished-at="2019-12-07T23:18:37Z">
+        <test-method status="PASS" signature="quitBrowser(org.testng.ITestResult)[pri:0, instance:org.techAltum.com.NaukriTest@490ab905]" name="quitBrowser" is-config="true" duration-ms="689" started-at="2019-12-07T23:50:16Z" finished-at="2019-12-07T23:50:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=naukriTest status=SUCCESS method=NaukriTest.naukriTest()[pri:0, instance:org.techAltum.com.NaukriTest@5f2108b5] output={null}]]]>
+                <![CDATA[[TestResult name=naukriTest status=SUCCESS method=NaukriTest.naukriTest()[pri:0, instance:org.techAltum.com.NaukriTest@490ab905] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:org.techAltum.com.NaukriTest@5f2108b5]" name="afterClass" is-config="true" duration-ms="235" started-at="2019-12-07T23:18:37Z" finished-at="2019-12-07T23:18:37Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:org.techAltum.com.NaukriTest@490ab905]" name="afterClass" is-config="true" duration-ms="247" started-at="2019-12-07T23:50:16Z" finished-at="2019-12-07T23:50:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

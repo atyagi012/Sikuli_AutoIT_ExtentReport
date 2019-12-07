@@ -1,8 +1,16 @@
 package org.techAltum.com;
 
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class NaukriTest extends BaseClass{
 
@@ -26,6 +34,17 @@ public class NaukriTest extends BaseClass{
 		skillsTextBox.sendKeys("Java");
 		extentTest.info("Skill is entered..");
 		
+		
+		//Take screenshot of a specific element
+		/*
+		 * Screenshot specificElement = new
+		 * AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).
+		 * takeScreenshot(driver,skillsTextBox); String scrrenshotPath =
+		 * System.getProperty("user.dir") +
+		 * "\\failureScreenshot\\" + "SkillTextBox"  + "_" + currentDateTime + ".jpeg";
+		 * 
+		 * ImageIO.write(specificElement.getImage(),"JPEG",new File(scrrenshotPath));
+		 */
 	}
 }
   

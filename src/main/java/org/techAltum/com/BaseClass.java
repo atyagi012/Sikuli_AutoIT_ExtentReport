@@ -1,9 +1,10 @@
 package org.techAltum.com;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -15,13 +16,16 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class BaseClass {
 
@@ -70,10 +74,16 @@ public class BaseClass {
 			String testMethodName = result.getMethod().getMethodName();
 			currentDateTime = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date());
 			
-			File screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			String scrrenshotPath = System.getProperty("user.dir") + "\\failureScreenshot\\" + testMethodName  + "_" + currentDateTime + ".jpeg";
 			
-			FileUtils.moveFile(screenShot, new File(scrrenshotPath));
+			Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+			ImageIO.write(fpScreenshot.getImage(),"JPEG",new File(scrrenshotPath));
+			
+			
+			//File screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			//String scrrenshotPath = System.getProperty("user.dir") + "\\failureScreenshot\\" + testMethodName  + "_" + currentDateTime + ".jpeg";
+			
+			//FileUtils.moveFile(screenShot, new File(scrrenshotPath));
 			
 			extentTest.addScreenCaptureFromPath(scrrenshotPath);
 			extentTest.info("Test is fail.");
