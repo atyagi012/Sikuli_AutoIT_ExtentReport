@@ -18,15 +18,14 @@ public class UploadFIleUsingAutoIT_Parameter extends BaseClass{
 		//WebElement chooseFile = driver.findElement(By.xpath("//input[@name='uploaded_file']"));
 		//chooseFile.click();
 		
-		  Actions act = new Actions(driver); 
-		  //act.doubleClick(chooseFile);
-		  act.click(chooseFile);
-		  act.build().perform(); 
-		  Thread.sleep(4000);
-		 
+		Actions act = new Actions(driver); 
+		//act.doubleClick(chooseFile);
+		act.click(chooseFile);
+		act.build().perform(); 
+		Thread.sleep(4000);
 		
-		//driver.findElement(By.name("uploaded_file")).click();
-		//Thread.sleep(2000);
+		
+		//Pass parameter in .exe at run time
 		//Call .exe to upload file
 		Runtime.getRuntime().exec(autoITexePath);
 	}

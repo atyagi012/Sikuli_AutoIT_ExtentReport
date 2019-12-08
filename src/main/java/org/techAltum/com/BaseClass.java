@@ -30,9 +30,9 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 public class BaseClass {
 
 	protected WebDriver driver;
-	public ExtentHtmlReporter htmlReporter ;
-	public ExtentReports extentReport ;
-	public ExtentTest extentTest;
+	public ExtentHtmlReporter htmlReporter ;    //for look and feel of report
+	public ExtentReports extentReport ;         //To create entry of test in report
+	public ExtentTest extentTest;               //To update status of test in report
 	String currentDateTime;
 	
 	@BeforeClass
@@ -42,7 +42,8 @@ public class BaseClass {
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/extentReport/TestAutomationReport_" + currentDateTime + ".html");
 		htmlReporter.config().setDocumentTitle("Automation Report");
 		htmlReporter.config().setReportName("Functional Report");
-		htmlReporter.config().setTheme(Theme.DARK);
+		htmlReporter.config().setTheme(Theme.STANDARD);
+		
 		
 		extentReport = new ExtentReports();
 		extentReport.attachReporter(htmlReporter);
@@ -66,7 +67,7 @@ public class BaseClass {
 	
 	@AfterMethod
 	public void quitBrowser(ITestResult result) throws Exception {
-		//if(result.isSuccess())
+		
 		if(result.getStatus() == ITestResult.FAILURE) {
 			extentTest.log(Status.FAIL, "Test case failed is = " + result.getName());
 			extentTest.log(Status.FAIL, "Test case failed is = " + result.getThrowable());
@@ -76,14 +77,16 @@ public class BaseClass {
 			
 			String scrrenshotPath = System.getProperty("user.dir") + "\\failureScreenshot\\" + testMethodName  + "_" + currentDateTime + ".jpeg";
 			
-			Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
+			Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(500)).takeScreenshot(driver);
 			ImageIO.write(fpScreenshot.getImage(),"JPEG",new File(scrrenshotPath));
 			
 			
-			//File screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			//String scrrenshotPath = System.getProperty("user.dir") + "\\failureScreenshot\\" + testMethodName  + "_" + currentDateTime + ".jpeg";
 			
-			//FileUtils.moveFile(screenShot, new File(scrrenshotPath));
+			//File screenShot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			//String screenshotPath = System.getProperty("user.dir") + "\\failureScreenshot\\" + testMethodName  + "_" + currentDateTime + ".jpeg";
+			
+			//FileUtils.moveFile(screenShot, new File(screenshotPath));
+			 
 			
 			extentTest.addScreenCaptureFromPath(scrrenshotPath);
 			extentTest.info("Test is fail.");
@@ -96,6 +99,7 @@ public class BaseClass {
 			extentTest.log(Status.PASS, "Test case passed is = " + result.getName());
 			extentTest.info("Test is pass.");
 		}
+
 		driver.quit();
 	}
 

@@ -16,17 +16,14 @@ public class UploadFIleUsingAutoIT extends BaseClass{
 		
 		WebElement chooseFile = driver.findElement(By.id("MainContent_fuDOCX"));
 		//WebElement chooseFile = driver.findElement(By.xpath("//input[@name='uploaded_file']"));
-		//chooseFile.click();
+		//chooseFile.click();     //Error - Invalid Argument
 		
 		  Actions act = new Actions(driver); 
 		  //act.doubleClick(chooseFile);
 		  act.click(chooseFile);
 		  act.build().perform(); 
 		  Thread.sleep(4000);
-		 
 		
-		//driver.findElement(By.name("uploaded_file")).click();
-		//Thread.sleep(2000);
 		//Call .exe to upload file
 		Runtime.getRuntime().exec(autoITexePath);
 	}
