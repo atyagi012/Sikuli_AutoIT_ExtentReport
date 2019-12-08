@@ -27,3 +27,6 @@ ExtentHtmlReporter - for look and feel of report
 ExtentReports - To create entry of test in report
 
 ExtentTest - To update status of test in report
+
+//Can we have cunst as private..?
+//What is singelton pattern?
